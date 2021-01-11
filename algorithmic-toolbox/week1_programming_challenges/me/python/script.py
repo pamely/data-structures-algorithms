@@ -13,13 +13,13 @@ for i in range(tests):
     print('Test #' + str(i))
     
     # run the generator gen.py with parameter n and the seed i
-    os.system('python3 gen.py ' + str(n) + ' ' + str(i) + ' input.txt')
+    os.system('python3 gen.py ' + str(n) + ' ' + str(i) + ' > input.txt')
 
     # run the model solution model.py 
     # Note that it is not necessary that solution is implement in 
     # python, you can as well run ./model <input.txt >model.txt for a C++ 
     # solution
-    os.system('python3 model.py <input.txt >model.txt')
+    os.system('python3 model.py < input.txt > model.txt')
 
     # run the main solution 
     os.system('python3 main.py <input.txt >main.txt')
