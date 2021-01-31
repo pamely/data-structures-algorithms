@@ -1,24 +1,18 @@
 # this is the main program
+import sys
 import time 
 
-def fib_last_digit(n):
-    '''
-        args: An integer
-        return: Fibonacci number
-        eg: Input = 10; Output = 55
-    '''
-    if(n <= 1):
-        return 
-    start = 1
-    fib_number = 1 
 
-    for i in range(n-2):
-        start, fib_number = fib_number, start + fib_number
-    return fib_number % 10
-    
-
+def gcd(a, b):
+    '''
+        args: Two integers a and b, a >= b >= 0
+        return: gcd
+        eg: Input = 12, 5; Output = 1
+    '''
+    return  if b == 0 else gcd(b, a % b)
 if __name__ == '__main__':
-    n = int(input())
-    print(fib_last_digit(n))
+    a = int(input())
+    b = int(input())
+    print(gcd(a, b))
     
     

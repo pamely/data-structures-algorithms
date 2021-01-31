@@ -1,10 +1,16 @@
-# python3
-def fib_last_digit(n):    
-    if (n <= 1):
-        return n %10
-    return (fib_last_digit(n-1) +  fib_last_digit(n-2)) % 10
+# Uses python3
+import sys
 
+def gcd_naive(a, b):
+    current_gcd = 1
+    for d in range(2, min(a, b) + 1):
+        if a % d == 0 and b % d == 0:
+            if d > current_gcd:
+                current_gcd = d
 
-if __name__ == '__main__':
-    n = int(input())
-    print (fib_last_digit(n))
+    return current_gcd
+
+if __name__ == "__main__":
+    a = int(input())
+    b = int(input())
+    print(gcd_naive(a, b))
