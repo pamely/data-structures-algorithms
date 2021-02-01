@@ -12,9 +12,7 @@ def pisano_number(p):
     a = 0
     b = 1
     for i in range(p * p ):
-        c = (a+b) % p
-        a = b
-        b = c
+        a, b = b, (a+b)  % p
         if (a == 0 and b == 1):
             return (i+1) 
 
@@ -26,7 +24,7 @@ def fibonacci(n):
         eg: Input = 10; Output = 55
     '''
     if(n <= 1):
-        return 
+        return 1
     start = 1
     fib_number = 1 
 
@@ -43,12 +41,14 @@ def fibonacci_huge (n, m):
 
     '''
     real_fibo_term = n % (pisano_number(m)) #  pisano_number(3) = 8
-    
+    print(fibonacci(real_fibo_term))
+    print(real_fibo_term)
     return fibonacci(real_fibo_term) % m 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    n, m = map(int, input.split())
- 
-    print(fibonacci_huge (n, m))
+    #input = sys.stdin.read()
+    #n, m = map(int, input.split())
+    n = int(input())
+    m = int(input())
+    print(fibonacci_huge(n, m))
     
     
