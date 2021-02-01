@@ -1,5 +1,6 @@
 # this is the main program
-import time 
+import time
+import sys 
 
 def fib_last_digit(n):
     '''
@@ -18,7 +19,8 @@ def fib_last_digit(n):
     
 
 if __name__ == '__main__':
-    n = int(input())
+    input = sys.stdin.read()
+    n = int(input)
     print(fib_last_digit(n))
     
     

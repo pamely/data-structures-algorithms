@@ -9,10 +9,10 @@ def gcd(a, b):
         return: gcd
         eg: Input = 12, 5; Output = 1
     '''
-    return  if b == 0 else gcd(b, a % b)
+    return a if b == 0 else gcd(b, a % b)
 if __name__ == '__main__':
-    a = int(input())
-    b = int(input())
+    input = sys.stdin.read()
+    a, b = map(int, input.split())
     print(gcd(a, b))
     
     
