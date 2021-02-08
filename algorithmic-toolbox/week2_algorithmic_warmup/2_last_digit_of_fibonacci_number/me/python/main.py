@@ -9,7 +9,7 @@ def fib_last_digit(n):
         eg: Input = 10; Output = 55
     '''
     if(n <= 1):
-        return 1
+        return n
     start = 1
     fib_number = 1 
 
